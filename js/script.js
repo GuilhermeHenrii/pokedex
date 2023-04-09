@@ -8,7 +8,10 @@ const input = document.querySelector('.input_search');
 let searchPokemon = 1;
 
 const fetchPokemon = async (pokemon) => {
-    const APIRespose = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    const APIRespose =  await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    //fetch, usado para fazer requisição http assíncrona, geralmente de uma API
+    //async é usado para dizer que a função é assincrona
+    //o await faz com que o js espere a requisição acontecer, para aí sim prosseguir com a execução do resto do código
 
     if (APIRespose.status === 200) {
         const data = await APIRespose.json();
